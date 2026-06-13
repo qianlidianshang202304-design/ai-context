@@ -13,7 +13,7 @@ fi
 cat > "$HOOK_FILE" << 'HOOK'
 #!/bin/sh
 echo "🔄 自动同步到 GitHub..."
-git push origin main 2>&1
+git -c http.proxy=http://127.0.0.1:7897 -c https.proxy=http://127.0.0.1:7897 push origin main 2>&1
 HOOK
 
 chmod +x "$HOOK_FILE"
