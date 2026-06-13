@@ -19,6 +19,10 @@
 3. 响应拦截器统一处理 401（清 token → 跳转登录）、自动解包 `response.data`
 4. 业务 API 按模块分对象导出（`authApi`、`hotspotApi`、`analyticsApi`），每个方法声明入参类型
 
+## 为什么好
+
+把 token 注入、401 跳转和错误格式统一收敛到 `lib/api.ts`，页面组件只关心业务请求，减少重复代码和状态不一致。
+
 ## 避坑
 
 - 拦截器中用 `typeof window !== "undefined"` 避免 SSR 时访问 localStorage 报错

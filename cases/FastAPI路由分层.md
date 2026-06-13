@@ -19,6 +19,10 @@ PostgreSQL `competitor_ads` 表中结构化的广告数据
 3. pandas 读取 Excel 后用 `rename(columns=COLUMN_MAP)` 统一字段名
 4. `AsyncSession` + `async/await` 做异步数据库操作
 
+## 为什么好
+
+入口、字段映射、数据库写入边界清楚，新增导入格式时优先改映射而不是散落修改业务逻辑，适合内容AI工厂这种多数据源导入场景。
+
 ## 避坑
 
 - Excel 列名可能变化，映射字典要作为配置集中管理
