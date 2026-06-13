@@ -26,7 +26,7 @@ PostgreSQL `competitor_ads` 表中结构化的广告数据
 
 ## 关联经验
 
-见 `projects/内容AI工厂.md`
+见 `projects/01-内容AI工厂.md`
 
 ---
 

@@ -26,7 +26,7 @@ PostgreSQL 表中结构化的社交媒体验数据
 
 ## 关联经验
 
-见 `projects/db数据库落库.md`
+见 `projects/05-db数据库落库.md`
 
 ---
 
