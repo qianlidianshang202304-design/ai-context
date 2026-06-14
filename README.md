@@ -41,6 +41,14 @@ ai-context/
 │   ├── 搜索引擎间接获取.md
 │   ├── ETL管道模式.md
 │   └── 项目代码组织模式.md
+├── dictionaries/        📚 字典库（字段口径、标签口径、分类标准）
+│   ├── README.md
+│   ├── 01-观众人群字典.md
+│   ├── 02-达人类型字典.md
+│   └── 03-内容角度字典.md
+├── drafts/              📝 待确认草稿（未确认不得进入正式字典）
+├── skills/              🧩 可复用执行技能（按需触发，不替代项目交付）
+│   └── tiktok-commerce-video-transcript-analysis/
 ├── 06-关于我.md         👤 个人信息、工作领域
 ├── 07-我的项目.md       📁 项目索引 → 指向 projects/
 │   projects/
@@ -61,6 +69,9 @@ ai-context/
 为避免单文件过大、上下文过长，项目和案例采用「索引 + 子目录」结构：
 - **索引文件**（`07-我的项目.md`、`10-项目经验.md`、`05-最佳案例.md`）：简短，始终可读
 - **子文件**（`projects/`、`cases/`）：AI 按需深入，只读相关的
+- **字典库**（`dictionaries/`）：稳定字段、标签、分类口径；涉及对应主题时必读
+- **草稿区**（`drafts/`）：未获用户确认的新字典、新标签、新口径，只能暂存在这里
+- **技能库**（`skills/`）：沉淀已跑通的执行流程；只有当前任务匹配时按需读取
 
 ---
 
@@ -140,6 +151,35 @@ git pull
 
 ## 📋 变更记录
 
+### 2026-06-14 v2.3 — 新增 TikTok 商业视频逐字稿分析 Skill
+
+- 新增 `skills/tiktok-commerce-video-transcript-analysis/`
+  - 固化 TikTok/Tabcut/FastMoss 视频清单分析流程
+  - 覆盖 `yt-dlp` 下载、本地 Whisper 转写、关键帧/截图证据、脚本金句挖掘、话术聚类、独立 AI 审查、数据包交付
+  - 明确 ASR 原文、ASR 清理节选、翻译/建议复用版必须分开，不能把清理句冒充逐字稿
+  - 明确指标数字必须回到源表/manifest，观众标签仅为策略画像，新增字典项必须先确认
+- 新增 `skills/tiktok-commerce-video-transcript-analysis/references/arrae-2026-06-example.md`
+  - 记录 Arrae Top50 本地视频 + 逐字稿分析的已验证样例和审查结论
+
+### 2026-06-14 v2.2 — 字典库独立管理
+
+- 新增 `dictionaries/` 字典库目录，用于集中存放字段口径、标签口径、分类标准
+- 新增 `dictionaries/README.md` 作为字典库索引和新增字典规则
+- 新增字典写入硬规则：任何正式字典新增/修改/删除/移动，必须先获得用户明确确认；未确认内容只能放在 `drafts/`
+- 移入 `dictionaries/01-观众人群字典.md`
+  - 固定 5 个 `audience_primary`
+  - 固定 6 个 `audience_secondary`
+  - 明确 `Cauasian` 自动规范化为 `Caucasian`
+- 新增 `dictionaries/02-达人类型字典.md`
+  - 固定 6 个 `creator_type`
+  - 无法归类时临时使用 `Unclassified - Needs Review`
+  - 新增正式达人类别必须先获得用户确认
+- 新增 `dictionaries/03-内容角度字典.md`
+  - 固定 12 个 `Primary Messaging Angle`
+  - 明确 B420 Natural GLP1、GLP1 Companion/Side Effects、Bloating、Fiber Side Effects 等核心边界
+  - 新增正式内容角度必须先获得用户确认
+- `01-AGENTS.md` 和 `02-工作规范.md` 已改为引用字典库路径
+
 ### 2026-06-13 v2.1 — 按需读取拆分
 
 - 大文件拆分为索引 + 子目录：
@@ -184,4 +224,4 @@ git pull
 
 ---
 
-*最后更新: 2026-06-13*
+*最后更新: 2026-06-14*
